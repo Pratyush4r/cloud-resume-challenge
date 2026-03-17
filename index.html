@@ -23,8 +23,20 @@
         <p>Cloud Resume Challenge - In progress</p>
 
         <script>
-            // We'll connect this to API later
-            document.getElementById("visitor-count").textContent = "...";
+            async function updateCounter() {
+                try {
+                    const response = await fetch(
+                        "https://hdkleyqqj7.execute-api.eu-north-1.amazonaws.com/count",
+                    );
+                    const data = await response.json();
+                    document.getElementById("visitor-count").textContent =
+                        data.count;
+                } catch (error) {
+                    document.getElementById("visitor-count").textContent =
+                        "Error loading count";
+                }
+            }
+            updateCounter();
         </script>
     </body>
 </html>

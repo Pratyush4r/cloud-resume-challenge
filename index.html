@@ -1,26 +1,204 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
-        <title>Pratyush Ranjan - Cloud Resume</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pratyush Ranjan - Cloud Engineer</title>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Pratyush Ranjan</h1>
-        <p>Visitor count: <span id="visitor-count">Loading...</span></p>
-        <p>BCA Graduate | Cloud Engineer</p>
+        <div class="container">
+            <header>
+                <h1>Pratyush Ranjan</h1>
+                <p class="subtitle">Cloud Engineer | Full-Stack Developer</p>
+                <div class="contact">
+                    <a href="mailto:pratyush4r@gmail.com"
+                        >pratyush4r@gmail.com</a
+                    >
+                    |
+                    <a href="https://linkedin.com/in/pratyush4r" target="_blank"
+                        >LinkedIn</a
+                    >
+                    |
+                    <a href="https://github.com/pratyush4r" target="_blank"
+                        >GitHub</a
+                    >
+                </div>
+                <p class="visitor">
+                    Visitor count: <span id="visitor-count">Loading...</span>
+                </p>
+            </header>
 
-        <h2>Skills</h2>
-        <p>
-            Cloud: AWS | Languages: Python, Bash, JavaScript, Java | Tools:
-            Docker, Linux, Git
-        </p>
+            <section class="summary">
+                <h2>Summary</h2>
+                <p>
+                    BCA graduate (AI & ML specialization) with hands-on
+                    experience in cloud infrastructure, serverless architecture,
+                    and full-stack development. Skilled in AWS, Python,
+                    React/TypeScript, and DevOps practices. Seeking remote cloud
+                    engineering or DevOps roles.
+                </p>
+            </section>
 
-        <h2>Projects</h2>
-        <p>
-            Repdex - React fitness dashboard with API integration, deployed on
-            Netlify
-        </p>
-        <p>Cloud Resume Challenge - In progress</p>
+            <section class="education">
+                <h2>Education</h2>
+                <div class="item">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p class="meta">
+                        AI & ML Specialization | Galgotias University | Jul 2022
+                        - Jul 2025
+                    </p>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2>Experience</h2>
+                <div class="item">
+                    <h3>System Design Intern</h3>
+                    <p class="meta">
+                        Galgotias University - Lifescope Project | Jul - Aug
+                        2024
+                    </p>
+                    <ul>
+                        <li>
+                            Designed system architecture (DFDs, ERDs) for
+                            healthcare patient management platform
+                        </li>
+                        <li>
+                            Developed database schema for secure patient record
+                            storage and clinical workflows
+                        </li>
+                        <li>
+                            Collaborated on technical requirements gathering and
+                            system documentation
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="projects">
+                <h2>Projects</h2>
+
+                <div class="project">
+                    <h3>
+                        Cloud Resume Challenge - AWS Serverless Infrastructure
+                    </h3>
+                    <p class="tech">
+                        AWS, Python, Lambda, DynamoDB, API Gateway, GitHub
+                        Actions
+                    </p>
+                    <p class="links">
+                        <a
+                            href="http://pratyush4r-cloud-resume.s3-website.eu-north-1.amazonaws.com"
+                            target="_blank"
+                            >Live</a
+                        >
+                        |
+                        <a
+                            href="https://github.com/Pratyush4r/cloud-resume-challenge"
+                            target="_blank"
+                            >Code</a
+                        >
+                    </p>
+                    <ul>
+                        <li>
+                            Built serverless resume with real-time visitor
+                            counter using AWS S3, Lambda, DynamoDB, and API
+                            Gateway
+                        </li>
+                        <li>
+                            Developed Python Lambda function with async data
+                            persistence and CORS configuration
+                        </li>
+                        <li>
+                            Implemented GitHub Actions CI/CD pipeline for
+                            automated deployments to S3
+                        </li>
+                        <li>
+                            Configured IAM roles, bucket policies, and API
+                            endpoints for secure public access
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>Repdex - Exercise Discovery Platform</h3>
+                    <p class="tech">
+                        React, TypeScript, RapidAPI, Netlify, CI/CD
+                    </p>
+                    <p class="links">
+                        <a href="https://repdex.netlify.app" target="_blank"
+                            >Live</a
+                        >
+                        |
+                        <a
+                            href="https://github.com/Pratyush4r/Repdex"
+                            target="_blank"
+                            >Code</a
+                        >
+                    </p>
+                    <ul>
+                        <li>
+                            Full-stack fitness app with 1300+ exercises,
+                            searchable by body part, target muscle, and
+                            equipment
+                        </li>
+                        <li>
+                            Integrated YouTube API for contextual video
+                            tutorials via RapidAPI
+                        </li>
+                        <li>
+                            Implemented accessibility features: dark mode, text
+                            scaling, reduced motion, high contrast
+                        </li>
+                        <li>
+                            Built timer suite (countdown, HIIT intervals,
+                            stopwatch) with localStorage persistence
+                        </li>
+                        <li>
+                            Migrated codebase from JavaScript to TypeScript and
+                            added comprehensive documentation
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="skill-category">
+                    <strong>Cloud & Infrastructure:</strong> AWS (S3, Lambda,
+                    DynamoDB, API Gateway, IAM), GitHub Actions, Linux, Bash,
+                    Docker
+                </div>
+                <div class="skill-category">
+                    <strong>Languages:</strong> Python, TypeScript, JavaScript,
+                    SQL, HTML/CSS, YAML
+                </div>
+                <div class="skill-category">
+                    <strong>Frontend:</strong> React, Tailwind CSS, REST API
+                    integration
+                </div>
+                <div class="skill-category">
+                    <strong>Backend:</strong> FastAPI, Lambda/serverless, API
+                    design, database design
+                </div>
+                <div class="skill-category">
+                    <strong>Tools:</strong> Git/GitHub, VS Code, Jupyter, Figma
+                </div>
+                <div class="skill-category">
+                    <strong>Core Competencies:</strong> Cloud Architecture,
+                    DevOps, CI/CD, Full-Stack Development, System Design,
+                    Technical Documentation
+                </div>
+            </section>
+
+            <footer>
+                <p>
+                    © 2026 Pratyush Ranjan | Built with AWS serverless
+                    architecture
+                </p>
+            </footer>
+        </div>
 
         <script>
             async function updateCounter() {

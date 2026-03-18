@@ -4,39 +4,106 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* Light mode - warm sepia tones */
+    --bg-primary: #f5f1e8;
+    --bg-secondary: #fffef9;
+    --text-primary: #2c3e50;
+    --text-secondary: #5d6d7e;
+    --text-light: #7f8c8d;
+    --accent: #3498db;
+    --border: #d4c5b0;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #242424;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-light: #888888;
+    --accent: #5dade2;
+    --border: #3a3a3a;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
     font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
-    color: #2c3e50;
-    background: #f5f5f5;
+    color: var(--text-primary);
+    background: var(--bg-primary);
     padding: 20px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    background: white;
+    background: var(--bg-secondary);
     padding: 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    border-color: var(--accent);
+}
+
+[data-theme="light"] .moon {
+    display: inline;
+}
+
+[data-theme="light"] .sun {
+    display: none;
+}
+
+[data-theme="dark"] .sun {
+    display: inline;
+}
+
+[data-theme="dark"] .moon {
+    display: none;
 }
 
 header {
     text-align: center;
-    border-bottom: 3px solid #3498db;
+    border-bottom: 3px solid var(--accent);
     padding-bottom: 20px;
     margin-bottom: 30px;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
 .subtitle {
     font-size: 1.2em;
-    color: #7f8c8d;
+    color: var(--text-secondary);
     margin-bottom: 10px;
 }
 
@@ -46,23 +113,25 @@ h1 {
 }
 
 .contact a {
-    color: #3498db;
+    color: var(--accent);
     text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 .contact a:hover {
+    opacity: 0.8;
     text-decoration: underline;
 }
 
 .visitor {
     margin-top: 15px;
     font-size: 0.9em;
-    color: #7f8c8d;
+    color: var(--text-light);
 }
 
 #visitor-count {
     font-weight: bold;
-    color: #3498db;
+    color: var(--accent);
 }
 
 section {
@@ -70,21 +139,21 @@ section {
 }
 
 h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #ecf0f1;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border);
     padding-bottom: 8px;
     margin-bottom: 15px;
     font-size: 1.5em;
 }
 
 h3 {
-    color: #34495e;
+    color: var(--text-secondary);
     margin-bottom: 5px;
     font-size: 1.1em;
 }
 
 .meta {
-    color: #7f8c8d;
+    color: var(--text-light);
     font-size: 0.9em;
     margin-bottom: 10px;
 }
@@ -96,7 +165,7 @@ h3 {
 .project {
     margin-bottom: 25px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid var(--border);
 }
 
 .project:last-child {
@@ -104,7 +173,7 @@ h3 {
 }
 
 .tech {
-    color: #7f8c8d;
+    color: var(--text-light);
     font-size: 0.9em;
     font-style: italic;
     margin-bottom: 8px;
@@ -115,13 +184,15 @@ h3 {
 }
 
 .links a {
-    color: #3498db;
+    color: var(--accent);
     text-decoration: none;
     margin-right: 15px;
     font-weight: 500;
+    transition: opacity 0.2s ease;
 }
 
 .links a:hover {
+    opacity: 0.8;
     text-decoration: underline;
 }
 
@@ -132,7 +203,7 @@ ul {
 
 li {
     margin-bottom: 6px;
-    color: #34495e;
+    color: var(--text-secondary);
 }
 
 .skill-category {
@@ -141,21 +212,30 @@ li {
 }
 
 .skill-category strong {
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 2px solid #ecf0f1;
+    border-top: 2px solid var(--border);
     text-align: center;
-    color: #7f8c8d;
+    color: var(--text-light);
     font-size: 0.9em;
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 20px;
+        padding-top: 70px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
     }
 
     h1 {

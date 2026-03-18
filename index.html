@@ -8,26 +8,23 @@
     </head>
     <body>
         <div class="container">
-            <header>
-                <h1>Pratyush Ranjan</h1>
-                <p class="subtitle">Cloud Engineer | Full-Stack Developer</p>
-                <div class="contact">
-                    <a href="mailto:pratyush4r@gmail.com"
-                        >pratyush4r@gmail.com</a
-                    >
-                    |
-                    <a href="https://linkedin.com/in/pratyush4r" target="_blank"
-                        >LinkedIn</a
-                    >
-                    |
-                    <a href="https://github.com/pratyush4r" target="_blank"
-                        >GitHub</a
-                    >
-                </div>
-                <p class="visitor">
-                    Visitor count: <span id="visitor-count">Loading...</span>
-                </p>
-            </header>
+            <body>
+                <div class="container">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+
+                    <header>
+                        <h1>Pratyush Ranjan</h1>
+                        <p class="subtitle">Cloud Engineer | Full-Stack Developer</p>
+                        <div class="contact">
+                            <a href="mailto:pratyush4r@gmail.com">pratyush4r@gmail.com</a> |
+                            <a href="https://linkedin.com/in/pratyush4r" target="_blank">LinkedIn</a> |
+                            <a href="https://github.com/pratyush4r" target="_blank">GitHub</a>
+                        </div>
+                        <p class="visitor">Visitor count: <span id="visitor-count">Loading...</span></p>
+                    </header>
 
             <section class="summary">
                 <h2>Summary</h2>
@@ -216,5 +213,21 @@
             }
             updateCounter();
         </script>
+        <script>
+            // Dark mode toggle
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+
+            // Check saved preference or default to light
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', currentTheme);
+
+            toggle.addEventListener('click', () => {
+                const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            });
+            </script>
+        </body>
     </body>
 </html>
